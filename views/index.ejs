@@ -20,29 +20,27 @@
                  odit quos esse similique ab nemo tempore.0
             </p>
         </form>
-        <form action="/add" method="post">
-            <input type="text" name="post" placeholder="Please wirte your post">
-            <button type="submit" id="add">Post</button>
-        </form>
-        <ul>
-            <% posts.forEach((post,  dele) => { %>
-                <li>
-                    <div class="post">
-                        <%= post %>
-                        <form action="/edit/ <%= dele %>" method="post">
-                            <input type="text" name="editpost" placeholder="Edit">
-                            <button type="submit" id="edit">Edit</button>
-
-                        </form>
-                        <form action="/delete/<%= dele %>" method="POST">
-                            <button type="submit" id="del">Delete</button>
-                        </form>
-                    </div>
-                </li>
-            <%}) %>
-
-            
-        </ul>
+            <form action="/addPost" method="post">
+                <input type="text" name="post" placeholder="Please write your post">
+                <button type="submit" id="add">Post</button>
+            </form>
+            <ul>
+                <% posts.forEach((post, index) => { %>
+                    <li>
+                        <div class="post">
+                            <%= post %>
+                            <form action="/addPost" method="POST" style="display: inline;">
+                                <input type="hidden" name="index" value="<%= index %>">
+                                <input type="text" name="editPost" placeholder="Edit your post">
+                                <button type="submit" id="edit_<%= index %>">Edit</button>
+                            </form>
+                            <form action="/delete/<%= index %>" method="POST" style="display: inline;">
+                                <button type="submit" id="del_<%= index %>">Delete</button>
+                            </form>
+                        </div>
+                    </li>
+                <% }) %>
+            </ul>
     </div>
     
 </body>
