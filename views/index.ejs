@@ -21,7 +21,7 @@
             </p>
         </form>
             <form action="/addPost" method="post">
-                <input type="text" name="post" placeholder="Please write your post">
+                <input type="text" name="post" placeholder="Please write your post" class="rame">
                 <button type="submit" id="add">Post</button>
             </form>
             <ul>
@@ -31,11 +31,11 @@
                             <%= post %>
                             <form action="/addPost" method="POST" style="display: inline;">
                                 <input type="hidden" name="index" value="<%= index %>">
-                                <input type="text" name="editPost" placeholder="Edit your post">
+                                <input type="text" name="editPost" placeholder="Edit your post" class="rame">
                                 <button type="submit" id="edit_<%= index %>">Edit</button>
                             </form>
                             <form action="/delete/<%= index %>" method="POST" style="display: inline;">
-                                <button type="submit" id="del_<%= index %>">Delete</button>
+                                <button type="submit" id="del_<%= index %>" class="del">Delete</button>
                             </form>
                         </div>
                     </li>
