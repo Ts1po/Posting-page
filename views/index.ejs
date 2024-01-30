@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web app</title>
+    <title>Web app for posting</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
@@ -24,23 +24,19 @@
                 <input type="text" name="post" placeholder="Please write your post" class="rame">
                 <button type="submit" id="add">Post</button>
             </form>
-            <ul>
-                <% posts.forEach((post, index) => { %>
-                    <li>
-                        <div class="post">
-                            <%= post %>
-                            <form action="/addPost" method="POST" style="display: inline;">
-                                <input type="hidden" name="index" value="<%= index %>">
-                                <input type="text" name="editPost" placeholder="Edit your post" class="rame">
-                                <button type="submit" id="edit_<%= index %>">Edit</button>
-                            </form>
-                            <form action="/delete/<%= index %>" method="POST" style="display: inline;">
-                                <button type="submit" id="del_<%= index %>" class="del">Delete</button>
-                            </form>
-                        </div>
-                    </li>
-                <% }) %>
-            </ul>
+            <% posts.forEach((post, index) => { %>
+                <div class="post">
+                    <%= post %>
+                    <form action="/addPost" method="POST">
+                        <input type="hidden" name="index" value="<%= index %>">
+                        <input type="text" name="editPost" placeholder="Edit your post" class="rame rume">
+                        <button type="submit" id="edit_<%= index %>">Edit</button>
+                    </form>
+                    <form action="/delete/<%= index %>" method="POST">
+                        <button type="submit" id="del_<%= index %>" class="del">Delete</button>
+                    </form>
+                </div>
+            <% }) %>
     </div>
     
 </body>

@@ -20,16 +20,18 @@ p {
 
 form {
   margin-top: 50px;
+  display: inline;
 }
 
+
+
 .rame {
-  color: white;
   font-weight: 500;
   font-size: 18px;
   border-radius: 5px;
   line-height: 22px;
   background-color: transparent;
-  border: 2px solid #3586ff;
+  border: 2px solid #1f4b8f;
   transition: all 0.3s;
   padding: 13px;
   margin-bottom: 15px;
@@ -40,8 +42,25 @@ form {
 
 .rame:focus {
   border: 2px solid #3586ff;
+  outline: none;
 }
 
+.rume {
+    width: 70%;
+    margin-left: 40px;
+    margin-top: 15px;
+}
+
+.post {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    background-color: white;
+    width: 80%;
+    margin-left: 120px;
+}
 
 [type="submit"] {
   width: 100%;
@@ -65,4 +84,7 @@ form {
 
 .del {
     margin-top: 20px;
+    margin-left: 15px;
 }
+
+
