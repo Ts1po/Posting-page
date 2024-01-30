@@ -29,7 +29,7 @@
                     <%= post %>
                     <form action="/addPost" method="POST">
                         <input type="hidden" name="index" value="<%= index %>">
-                        <input type="text" name="editPost" placeholder="Edit your post" class="rame rume">
+                        <input type="text" name="editPost" placeholder="Edit your post" class="rame rume" id="edit">
                         <button type="submit" id="edit_<%= index %>">Edit</button>
                     </form>
                     <form action="/delete/<%= index %>" method="POST">
